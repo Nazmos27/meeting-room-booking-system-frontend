@@ -1,20 +1,17 @@
 import { createBrowserRouter } from "react-router-dom";
 
 import App from "../App";
-import LoginPage from "../pages/LoginPage";
-import Home from "../pages/HomePage/Home";
-import ErrorPage from "../pages/ErrorPage";
-import SignupPage from "../pages/SignupPage";
-import AllRooms from "../pages/RoomPage/AllRooms";
-import AboutPage from "../pages/AboutPage";
-import ContactPage from "../pages/ContactPage";
+
+import DashboardLayout from "../components/layout/DashboardLayout";
+
+import ProtectedLayout from "../components/layout/ProtectedLayout";
 
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-    errorElement: <ErrorPage />,
+    errorElement: <Error />,
     children: [
       {
         path: "/",
@@ -22,27 +19,131 @@ const router = createBrowserRouter([
       },
       {
         path: "rooms",
-        element: <AllRooms />,
+        element: <Rooms />,
+      },
+      {
+        path: "booking/:roomId",
+        element: (
+          <ProtectedLayout role="user">
+            <Booking />
+          </ProtectedLayout>
+        ),
+      },
+      {
+        path: "booking/:roomId/checkout",
+        element: (
+          <ProtectedLayout role="user">
+            <Checkout />
+          </ProtectedLayout>
+        ),
+      },
+      {
+        path: "my-bookings",
+        element: (
+          <ProtectedLayout role="user">
+            <MyBookings />
+          </ProtectedLayout>
+        ),
+      },
+      {
+        path: "rooms/:roomId",
+        element: (
+          <ProtectedLayout role="user">
+            {" "}
+            <RoomDetails />
+          </ProtectedLayout>
+        ),
       },
       {
         path: "about-us",
-        element: <AboutPage />,
+        element: <AboutUs />,
       },
       {
         path: "contact-us",
-        element: <ContactPage />,
+        element: <ContactUs />,
       },
-      
+      {
+        path: "contact-us",
+        element: <ContactUs />,
+      },
     ],
   },
- 
+  {
+    path: "dashboard",
+    element: (
+      <ProtectedLayout role="admin">
+        {" "}
+        <DashboardLayout />
+      </ProtectedLayout>
+    ),
+    errorElement: <Error />,
+    children: [
+      {
+        path: "/dashboard",
+        element: (
+          <ProtectedLayout role="admin">
+            <WelcomeAdmin />,
+          </ProtectedLayout>
+        ),
+      },
+      {
+        path: "room-management",
+        element: (
+          <ProtectedLayout role="admin">
+            <RoomManagement />,
+          </ProtectedLayout>
+        ),
+      },
+      {
+        path: "room-management/create-room",
+        element: (
+          <ProtectedLayout role="admin">
+            <CreateRoom />,
+          </ProtectedLayout>
+        ),
+      },
+      {
+        path: "room-management/update-room/:roomId",
+        element: (
+          <ProtectedLayout role="admin">
+            <UpdateRoom />,
+          </ProtectedLayout>
+        ),
+      },
+      {
+        path: "slots-management",
+        element: (
+          <ProtectedLayout role="admin">
+            {" "}
+            <SlotsManagement />{" "}
+          </ProtectedLayout>
+        ),
+      },
+      {
+        path: "booking-management",
+        element: (
+          <ProtectedLayout role="admin">
+            <BookingManagement />,
+          </ProtectedLayout>
+        ),
+      },
+      {
+        path: "user-management",
+        element: (
+          <ProtectedLayout role="admin">
+            <UserManagement />,
+          </ProtectedLayout>
+        ),
+      },
+    ],
+  },
   {
     path: "login",
-    element: <LoginPage />,
+    element: <Login />,
   },
   {
     path: "signup",
-    element: <SignupPage />,
+    element: <SignUp />,
   },
 ]);
 export default router;
