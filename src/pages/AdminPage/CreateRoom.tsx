@@ -3,13 +3,13 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { FieldValues, SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import MSForm from "../../components/form/MSForm";
-import MSInput from "../../components/form/MSInput";
-import MSFileInput from "../../components/form/MSFileInput";
-import uploadImage from "../../utils/uploadImage";
 import { primaryButton } from "../../config/themeConfig";
 import { useCreateRoomMutation } from "../../redux/features/admin/roomManagement.api";
 import { roomSchema } from "../../schemas/roomValidationSchema";
+import uploadImage from "../../utils/uploadImage";
+import CForm from "../../components/form/CForm";
+import CInputField from "../../components/form/CInputField";
+import CFileInput from "../../components/form/CFileInput";
 
 const CreateRoom = () => {
   const navigate = useNavigate();
@@ -66,32 +66,32 @@ const CreateRoom = () => {
   return (
     <div>
       <h2>Create Room</h2>
-      <MSForm
+      <CForm
         onSubmit={onSubmit}
         resolver={zodResolver(roomSchema.createRoomSchema)}
       >
         <Row gutter={[30, 30]}>
           <Col sm={24} lg={12}>
-            <MSInput label="Room Name" name="name" type="text" />
+            <CInputField label="Room Name" name="name" type="text" />
           </Col>
 
           <Col sm={24} lg={12}>
-            <MSInput label="Room No." name="roomNo" type="number" />
+            <CInputField label="Room No." name="roomNo" type="number" />
           </Col>
 
           <Col sm={24} lg={12}>
-            <MSInput label="Floor No." name="floorNo" type="number" />
+            <CInputField label="Floor No." name="floorNo" type="number" />
           </Col>
 
           <Col sm={24} lg={12}>
-            <MSInput label="Capacity" name="capacity" type="number" />
+            <CInputField label="Capacity" name="capacity" type="number" />
           </Col>
 
           <Col sm={24} lg={12}>
-            <MSInput label="Price Per Slot" name="pricePerSlot" type="number" />
+            <CInputField label="Price Per Slot" name="pricePerSlot" type="number" />
           </Col>
           <Col sm={24} lg={12}>
-            <MSInput
+            <CInputField
               label="Amenities"
               name="amenities"
               type="text"
@@ -100,10 +100,10 @@ const CreateRoom = () => {
           </Col>
         </Row>
         {/* Single image upload */}
-        <MSFileInput label="Main Image" name="img" accept="image/*" />
+        <CFileInput label="Main Image" name="img" accept="image/*" />
 
         {/* Multiple image upload */}
-        <MSFileInput
+        <CFileInput
           label="Detail Images"
           name="detailImages"
           accept="image/*"
@@ -119,7 +119,7 @@ const CreateRoom = () => {
             {loading ? <Spin /> : "Create Room"}
           </Button>
         </div>
-      </MSForm>
+      </CForm>
     </div>
   );
 };
