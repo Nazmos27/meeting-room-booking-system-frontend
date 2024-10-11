@@ -32,3 +32,15 @@ export type TUser = {
     room: TRoom;
     __v: number;
   };
+
+  export type TBooking = {
+    _id: string;
+    date: string;
+    isConfirmed: string;
+    isDeleted: boolean;
+    room: TRoom;
+    slots: TSlot[];
+    totalAmount: number;
+    user: TUser;
+    __v: number;
+  };
