@@ -6,6 +6,8 @@ import Home from "../pages/HomePage/Home";
 import ErrorPage from "../pages/ErrorPage";
 import SignupPage from "../pages/SignupPage";
 import AllRooms from "../pages/RoomPage/AllRooms";
+import AboutPage from "../pages/AboutPage";
+import ContactPage from "../pages/ContactPage";
 
 
 const router = createBrowserRouter([
@@ -22,6 +24,15 @@ const router = createBrowserRouter([
         path: "rooms",
         element: <AllRooms />,
       },
+      {
+        path: "about-us",
+        element: <AboutPage />,
+      },
+      {
+        path: "contact-us",
+        element: <ContactPage />,
+      },
+      
     ],
   },
  
