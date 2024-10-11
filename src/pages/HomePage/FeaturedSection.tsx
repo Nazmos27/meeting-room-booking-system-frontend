@@ -1,11 +1,11 @@
 import React from "react";
-import SectionHeading from "../../components/SectionHeading";
 import { useGetAllRoomsQuery } from "../../redux/features/user/userAccess.api";
 import RoomCard from "../../components/ui/RoomCard";
 import { Button, Col, Row } from "antd";
 import { Link } from "react-router-dom";
 import { primaryButton } from "../../config/themeConfig";
 import { TRoom } from "../../types/user.types";
+import SectionHeader from "../../components/ui/SectionHeader";
 
 const FeaturedSection: React.FC = () => {
   const { data: roomsData } = useGetAllRoomsQuery([
@@ -20,7 +20,7 @@ const FeaturedSection: React.FC = () => {
   ]);
   return (
     <div style={{ margin: "48px 0px" }}>
-      <SectionHeading
+      <SectionHeader
         title="Our Featured Rooms"
         subTitle="Explore our featured rooms and book your available slots anytime"
       />

@@ -1,8 +1,12 @@
 import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { useAppDispatch, useAppSelector } from "../../redux/hooks";
+import { logout, useCurrentUser } from "../../redux/features/auth/authSlice";
 import { Button, Dropdown, MenuProps } from "antd";
 import { FaUserCircle } from "react-icons/fa";
+import { toast } from "sonner";
 import { HiMenuAlt1 } from "react-icons/hi";
+import { primaryButton } from "../../config/themeConfig";
 
 type TMenuItem = {
   label: string;
@@ -28,9 +32,15 @@ const menuItems: TMenuItem[] = [
   },
 ];
 
-const Navbar: React.FC = () => {
+const NavBar: React.FC = () => {
   const [isOpenMenu, setIsOpenMenu] = useState(false);
+  const loggedInUser = useAppSelector(useCurrentUser);
+  const dispatch = useAppDispatch();
 
+  const handleLogout = () => {
+    dispatch(logout());
+    toast.success("Log out successful");
+  };
   const adminItems: MenuProps["items"] = [
     {
       key: "dashboard",
@@ -39,7 +49,7 @@ const Navbar: React.FC = () => {
     {
       key: "logout",
       label: (
-        <Button block type="primary" danger={true}>
+        <Button onClick={handleLogout} block type="primary" danger={true}>
           Logout
         </Button>
       ),
@@ -53,18 +63,19 @@ const Navbar: React.FC = () => {
     {
       key: "logout",
       label: (
-        <Button block type="primary" danger={true}>
+        <Button onClick={handleLogout} block type="primary" danger={true}>
           Logout
         </Button>
       ),
     },
   ];
 
-  const items: MenuProps["items"] = adminItems;
+  const items: MenuProps["items"] =
+    loggedInUser?.role === "admin" ? adminItems : userItems;
   return (
     <div className="navbar">
       <div className="navContent">
-        <div style={{ display: "flex", gap: "14px", alignItems: "center" }}>
+        <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
           <Button
             ghost
             size="middle"
@@ -74,7 +85,7 @@ const Navbar: React.FC = () => {
             <HiMenuAlt1 style={{ fontSize: "20px" }} />
           </Button>
           <Link to={"/"}>
-            <img style={{ width: "100px" }} src="./logo.png" alt="logo" />
+            <img className="h-20 w-40 object-cover scale-150" src="./logo.png" alt="logo" />
           </Link>
         </div>
         <div
@@ -96,19 +107,25 @@ const Navbar: React.FC = () => {
           ))}
         </div>
         <div>
-          {
+          {loggedInUser?.role ? (
+            <div>
+              <Dropdown menu={{ items }} trigger={["click"]}>
+                <FaUserCircle style={{ fontSize: "30px", color: "#264653" }} />
+              </Dropdown>
+            </div>
+          ) : (
             <div>
               <Link to={"/login"}>
-                <Button type="primary" style={{ backgroundColor: "blue" }}>
+                <Button type="primary" style={primaryButton}>
                   Login
                 </Button>
               </Link>
             </div>
-          }
+          )}
         </div>
       </div>
     </div>
   );
 };
 
-export default Navbar;
+export default NavBar;

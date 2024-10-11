@@ -12,6 +12,8 @@ import {
   REGISTER,
 } from "redux-persist";
 import { baseApi } from "./api/baseApi";
+import bookingReducer from "./features/user/bookingSlice";
+
 
 const persistConfig = {
   key: "auth",

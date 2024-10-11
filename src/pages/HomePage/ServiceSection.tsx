@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import "../../styles/style.css";
 import SectionHeader from "../../components/ui/SectionHeader";
 
-const Service: React.FC = () => {
+const ServiceSection: React.FC = () => {
   const services = [
     {
         title: "Easy Room Booking",
@@ -71,4 +71,4 @@ const Service: React.FC = () => {
   );
 };
 
-export default Service;
+export default ServiceSection;

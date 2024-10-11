@@ -31,25 +31,25 @@ const BannerSection: React.FC = () => {
       >
         <SwiperSlide>
           <img
-            src="https://res.cloudinary.com/dbwftcxvx/image/upload/v1724628225/slider-1_wpbzmk.jpg"
+            src="https://i.ibb.co.com/4WZ3BYN/Smart-office-and-coworking-place-Krasnodar-1.jpg"
             alt="slider Img"
           />
         </SwiperSlide>
         <SwiperSlide>
           <img
-            src="https://res.cloudinary.com/dbwftcxvx/image/upload/v1724628225/slider-2_nuy9yv.jpg"
+            src="https://i.ibb.co.com/mT2t0Kc/ec0dc51a-ae78-44b4-975c-972a51f4cf73.jpg"
             alt="slider Img"
           />
         </SwiperSlide>
         <SwiperSlide>
           <img
-            src="https://res.cloudinary.com/dbwftcxvx/image/upload/v1724628225/slider-3_xdnnpp.jpg"
+            src="https://i.ibb.co.com/B37SP2P/9eafc898-73c5-449e-9184-8997ec94f32a.jpg"
             alt="slider Img"
           />
         </SwiperSlide>
         <SwiperSlide>
           <img
-            src="https://res.cloudinary.com/dbwftcxvx/image/upload/v1724628225/slider-4_jgujhf.jpg"
+            src="https://i.ibb.co.com/B6zZxkb/Orange-Poland-Offices-Warsaw-Office-Snapshots.jpg"
             alt="slider Img"
           />
         </SwiperSlide>
@@ -98,3 +98,12 @@ const BannerSection: React.FC = () => {
 };
 
 export default BannerSection;
+
+
+// https://i.ibb.co.com/B37SP2P/9eafc898-73c5-449e-9184-8997ec94f32a.jpg
+// https://i.ibb.co.com/mT2t0Kc/ec0dc51a-ae78-44b4-975c-972a51f4cf73.jpg
+// https://i.ibb.co.com/BrZ3pjX/ce7875fa-1ccb-40a6-aeda-a35afb6d66e2.jpg
+// https://i.ibb.co.com/Kw7Rs7Z/IT.jpg
+// https://i.ibb.co.com/4WZ3BYN/Smart-office-and-coworking-place-Krasnodar-1.jpg
+// https://i.ibb.co.com/B6zZxkb/Orange-Poland-Offices-Warsaw-Office-Snapshots.jpg
+// https://i.ibb.co.com/Fg52m0F/Smart-office-and-coworking-place-Krasnodar.jpg
