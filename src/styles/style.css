@@ -1,0 +1,70 @@
+/* Nav bar related styles */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 20;
+    width: 100%;
+    backdrop-filter: blur(5px);
+    background-color: #75dce072;
+  }
+  .menuTriggerButton {
+    display: block;
+  }
+  .navContent {
+    width: 95%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+  }
+  .nav-link-container {
+    flex-direction: column;
+    position: absolute;
+    top: 59px;
+    left: 62px;
+    background-color: #75dce072;
+    width: 200px;
+    align-items: start;
+    padding: 20px 15px;
+    justify-content: center;
+    gap: 20px;
+  }
+  .openedNav {
+    display: flex;
+    backdrop-filter: blur(5px);
+  }
+  .closedNav {
+    display: none;
+  }
+  .navItem {
+    text-decoration: none;
+    font-weight: 600;
+    color: #030664;
+    padding-bottom: 3px;
+    position: relative;
+  }
+  .active-route {
+    border-bottom: 3px solid #f1c503;
+  }
+  .navItem::after {
+    content: "";
+    width: 0;
+    height: 3px;
+    background-color: #f1c503;
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    transition: all 0.3s ease-in-out;
+  }
+  .navItem:hover::after {
+    width: 100%;
+  }
+  
+  /* service card styles */
+  .serviceCard {
+    border: 2px solid #457b9d;
+    padding: 40px 30px;
+  }
+  
