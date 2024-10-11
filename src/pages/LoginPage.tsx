@@ -1,16 +1,45 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FieldValues, SubmitHandler } from "react-hook-form";
 import { Button, Col, Divider, Row } from "antd";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useLoginMutation } from "../redux/features/auth/authApi";
 import { toast } from "sonner";
-import CInputField from "../components/form/CInputField";
+import { useAppDispatch } from "../redux/hooks";
+import { setUser } from "../redux/features/auth/authSlice";
+import { TUser } from "../types/user.types";
+import { primaryButton } from "../config/themeConfig";
+import { verifyToken } from "../utils/verifyToken";
 import CForm from "../components/form/CForm";
+import CInputField from "../components/form/CInputField";
+import { loginSchema } from "../schemas/userValidationSchema";
+const Login: React.FC = () => {
+  const [login] = useLoginMutation();
+  const navigate = useNavigate();
+  const dispatch = useAppDispatch();
 
-const LoginPage: React.FC = () => {
   const onSubmit: SubmitHandler<FieldValues> = async (data) => {
-    toast.loading("Loading...");
+    const toastId = toast.loading("Loading...");
 
-    console.log("Form submitted");
+    try {
+      const res = await login(data as { email: string; password: string });
+
+      if (res.error) {
+        toast.error("Something went wrong", { id: toastId });
+      } else if (res.data.token) {
+        const user = verifyToken(res.data.token) as TUser;
+        dispatch(setUser({ user: res?.data?.data, token: res.data.token }));
+        if (user.role === "admin") {
+          toast.success(res.data.message, { id: toastId });
+          navigate("/dashboard");
+        } else {
+          toast.success(res.data.message, { id: toastId });
+          navigate("/");
+        }
+      }
+    } catch (error) {
+      toast.error("Something went wrong", { id: toastId });
+    }
   };
   return (
     <div
@@ -26,7 +55,7 @@ const LoginPage: React.FC = () => {
         <h1 style={{ textAlign: "center" }}>Login</h1>
 
         <div>
-          <CForm onSubmit={onSubmit}>
+          <CForm onSubmit={onSubmit} resolver={zodResolver(loginSchema)}>
             <Row>
               <Col span={24}>
                 <CInputField type="email" label="Email" name="email" />
@@ -35,11 +64,7 @@ const LoginPage: React.FC = () => {
                 <CInputField type="text" label="Password" name="password" />
               </Col>
             </Row>
-            <Button
-              htmlType="submit"
-              type="primary"
-              style={{ backgroundColor: "blue" }}
-            >
+            <Button htmlType="submit" type="primary" style={primaryButton}>
               Login
             </Button>
           </CForm>
@@ -52,4 +77,4 @@ const LoginPage: React.FC = () => {
   );
 };
 
-export default LoginPage;
+export default Login;

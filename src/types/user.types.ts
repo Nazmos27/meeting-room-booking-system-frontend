@@ -22,3 +22,13 @@ export type TUser = {
     isDeleted: boolean;
     updatedAt: string;
   };
+
+  export type TSlot = {
+    _id: string;
+    date: string;
+    startTime: string;
+    endTime: string;
+    isBooked: boolean;
+    room: TRoom;
+    __v: number;
+  };
