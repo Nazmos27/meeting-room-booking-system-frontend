@@ -1,92 +1,69 @@
 import React from "react";
-import { Row, Col } from "antd";
+import {  Collapse } from "antd";
 import { motion } from "framer-motion";
 import SectionHeader from "../../components/ui/SectionHeader";
-const features = [
+import type { CollapseProps } from 'antd';
+import Lottie from "lottie-react";
+import whyUs from "../../../public/whyUs.json"
+
+
+
+const items: CollapseProps['items'] = [
   {
-    title: "Tailored for Your Needs",
-    description:
-      "Customizable booking options to match your unique schedule and preferences.",
+    key: '1',
+    label: '🎯 Tailored for Your Needs',
+    children: <p>Customizable booking options to match your unique schedule and preferences. Whether it's a short meeting or an all-day conference, we've got you covered.</p>,
   },
   {
-    title: "Fast & Reliable",
-    description:
-      "Enjoy lightning-fast booking with a system built for efficiency and dependability.",
+    key: '2',
+    label: '⚡️ Fast & Reliable',
+    children: <p>Enjoy lightning-fast booking with a system designed for efficiency and reliability. Say goodbye to delays and enjoy a seamless reservation experience every time.</p>,
   },
   {
-    title: "Transparent Pricing",
-    description:
-      "No hidden fees. You get clear, upfront pricing for all room bookings.",
+    key: '3',
+    label: '💰 Transparent Pricing',
+    children: <p>No hidden fees or surprise charges. You get clear, upfront pricing with every booking, so you always know exactly what you're paying for. Honest and fair, just the way you want it.</p>,
   },
   {
-    title: "Exceptional Customer Support",
-    description:
-      "Our dedicated support team is available 24/7 to assist with all your booking needs.",
+    key: '4',
+    label: '🤝 Exceptional Customer Support',
+    children: <p>Our dedicated support team is available 24/7 to assist with all your booking needs. Whether it's troubleshooting, room changes, or just advice, we're here for you around the clock.</p>,
   },
   {
-    title: "Flexible Cancellations",
-    description:
-      "Plans changed? Easily cancel or modify your bookings with no hassle.",
+    key: '5',
+    label: '🔄 Flexible Cancellations',
+    children: <p>Plans changed? No problem! Easily cancel or modify your bookings with no hassle. Our flexible cancellation policies are designed to give you the freedom to adjust your schedule stress-free.</p>,
   },
   {
-    title: "Trusted by Professionals",
-    description:
-      "Join countless businesses that trust us to handle their meeting room needs effortlessly.",
+    key: '6',
+    label: '🏆 Trusted by Professionals',
+    children: <p>Join countless businesses and professionals who rely on us to handle their meeting room needs effortlessly. We're the trusted partner for those who demand excellence.</p>,
   },
   {
-    title: "Comprehensive Room Details",
-    description:
-      "Get detailed information on room features, ensuring you choose the perfect space.",
+    key: '7',
+    label: '🏢 Comprehensive Room Details',
+    children: <p>Get detailed insights into room features, including size, amenities, and availability. From seating capacity to tech equipment, make informed decisions to ensure the perfect fit for your needs.</p>,
+  },
+  {
+    key: '8',
+    label: '🔒 Secure Transactions',
+    children: <p>Your data and payments are safe with us. We utilize advanced encryption and secure protocols to ensure every transaction is protected and worry-free.</p>,
   },
 ];
+
+
+
+
+
 
 const WhyUsSection: React.FC = () => {
   return (
     <div style={{ margin: "100px 0px" }}>
-      <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-      >
-        <SectionHeader
-          title="Why Choose Us?"
-          subTitle="We offer exceptional features for a superior experience"
-        />
-      </motion.div>
-
-      <Row gutter={[30, 70]} align="stretch">
-        {features.map((feature, index) => (
-          <Col xs={24} sm={12} md={6} key={index}>
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3 }}
-              style={{ height: "100%" }} // Ensures the div stretches to fill height
-            >
-              <div
-                style={{
-                  padding: "20px",
-                  borderRadius: "8px",
-                  backgroundColor: "#f5f5f5",
-                  textAlign: "center",
-                  boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
-                  display: "flex",
-                  flexDirection: "column", // Ensure vertical alignment
-                  justifyContent: "space-between",
-                  height: "100%", // Make sure all cards have equal height
-                }}
-              >
-                <h3 style={{ color: "#003366", fontSize: "20px" }}>
-                  {feature.title}
-                </h3>
-                <p style={{ fontSize: "16px" }}>{feature.description}</p>
-              </div>
-            </motion.div>
-          </Col>
-        ))}
-      </Row>
+      <SectionHeader title="Why Choose Us"/>
+      <div className="md: flex md:justify-center md:items-center">
+        <div className="w-1/2"><Lottie animationData={whyUs}></Lottie></div>
+        <Collapse accordion items={items} className="w-1/2 text-[#002349] md:text-xl"/>
+      </div>
     </div>
   );
 };

@@ -58,7 +58,13 @@ const NavBar: React.FC = () => {
   const userItems: MenuProps["items"] = [
     {
       key: "myBookings",
-      label: <Link to={"/my-bookings"}>My Bookings</Link>,
+      label: (
+        <Link to={"/my-bookings"}>
+          <Button block type="primary">
+            My Bookings
+          </Button>
+        </Link>
+      ),
     },
     {
       key: "logout",
@@ -85,7 +91,11 @@ const NavBar: React.FC = () => {
             <HiMenuAlt1 style={{ fontSize: "20px" }} />
           </Button>
           <Link to={"/"}>
-            <img className="h-20 w-40 object-cover" src="./logo.png" alt="logo" />
+            <img
+              className="h-20 w-40 object-cover"
+              src="./logo.png"
+              alt="logo"
+            />
           </Link>
         </div>
         <div

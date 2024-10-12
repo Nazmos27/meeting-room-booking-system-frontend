@@ -78,16 +78,17 @@ const BannerSection: React.FC = () => {
             flexDirection: "column",
             justifyContent: "center",
             alignItems: "center",
+            gap : "14px"
           }}
         >
-          <h1 style={{ fontSize: "64px", textAlign: "center" }}>
+          <h1 className="text-5xl text-center">
             Book Your Ideal Meeting Room with Ease.
           </h1>
-          <h3 style={{ fontSize: "32px", textAlign: "center" }}>
+          <h3 className="text-3xl text-center">
             Efficient, hassle-free room booking for all your meeting needs
           </h3>
           <Link style={{ marginTop: "10px" }} to={"/rooms"}>
-            <Button type="primary" style={primaryButton}>
+            <Button type="primary" style={primaryButton} className="h-14 w-32 md:text-xl hover:scale-110 ">
               Book Now
             </Button>
           </Link>
