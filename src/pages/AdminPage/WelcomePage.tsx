@@ -3,7 +3,7 @@ import welcomeAnimation from "../../assets/welcomeAdmin.json";
 import Lottie from "lottie-react";
 import SectionHeader from "../../components/ui/SectionHeader";
 
-const WelcomeAdmin: React.FC = () => {
+const WelcomePage: React.FC = () => {
   return (
     <div>
       <SectionHeader title="Welcome Back" />
@@ -25,4 +25,4 @@ const WelcomeAdmin: React.FC = () => {
   );
 };
 
-export default WelcomeAdmin;
+export default WelcomePage;

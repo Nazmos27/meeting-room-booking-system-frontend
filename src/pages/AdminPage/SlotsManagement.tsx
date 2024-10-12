@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Table, Button, Modal, message } from "antd";
-// import { TimePicker } from "antd";
 import moment from "moment";
 import {
   useGetAllAvailableSlotsQuery,
@@ -14,8 +13,11 @@ import {
 import { TRoom, TSlot } from "../../types/user.types";
 import { FieldValues, SubmitHandler } from "react-hook-form";
 
-// import MSDatePicker from "../../components/form/MSDatePicker";
 import { primaryButton } from "../../config/themeConfig";
+import CDatePickerWithoutWatch from "../../components/form/CDatePickerWithoutWatch";
+import CTimePicker from "../../components/form/CTimePicker";
+import CForm from "../../components/form/CForm";
+import CSelectField from "../../components/form/CSelectField";
 
 const SlotsManagement = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -193,21 +195,17 @@ const SlotsManagement = () => {
         footer={null}
         confirmLoading={confirmLoading}
       >
-        <MSForm onSubmit={handleFormSubmit}>
-          <MSSelect
+        <CForm onSubmit={handleFormSubmit}>
+          <CSelectField
             name="room"
             label="Room"
             options={roomOptions}
             disabled={roomDataLoading}
           />
-          {/* <MSDatePicker
-            name="date"
-            label="Select Date"
-            onValueChange={onDateChange}
-          /> */}
-          <MSDatePickerWithoutWatch name="date" label="Select Date" />
-          <MSTimePicker name="startTime" label="Start Time" />
-          <MSTimePicker name="endTime" label="End Time" />
+          
+          <CDatePickerWithoutWatch name="date" label="Select Date" />
+          <CTimePicker name="startTime" label="Start Time" />
+          <CTimePicker name="endTime" label="End Time" />
           <Button
             type="primary"
             htmlType="submit"
@@ -216,7 +214,7 @@ const SlotsManagement = () => {
           >
             {currentSlot ? "Update Slot" : "Create Slot"}
           </Button>
-        </MSForm>
+        </CForm>
       </Modal>
     </div>
   );

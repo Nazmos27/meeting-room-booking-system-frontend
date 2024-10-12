@@ -73,8 +73,8 @@ const NavBar: React.FC = () => {
   const items: MenuProps["items"] =
     loggedInUser?.role === "admin" ? adminItems : userItems;
   return (
-    <div className="fixed top-0 left-0 z-20 w-full backdrop-blur-sm bg-[#002349]">
-      <div className="w-[95%] mx-auto flex justify-between items-center relative">
+    <div className="navbar ">
+      <div className="navContent">
         <div className="flex items-center gap-3">
           <Button
             ghost
@@ -85,12 +85,12 @@ const NavBar: React.FC = () => {
             <HiMenuAlt1 style={{ fontSize: "20px" }} />
           </Button>
           <Link to={"/"}>
-            <img className="h-20 w-40 object-cover scale-150" src="./logo.png" alt="logo" />
+            <img className="h-20 w-40 object-cover" src="./logo.png" alt="logo" />
           </Link>
         </div>
         <div
-          className={`flex flex-col  absolute top-[59px] left-[62px] bg-[#75dce072] w-[200px] items-start p-[20px_15px] justify-center gap-5 ${
-            isOpenMenu ? "flex backdrop-blur-sm" : "hidden"
+          className={`nav-link-container ${
+            isOpenMenu ? "openedNav" : "closedNav"
           }`}
         >
           {menuItems.map((item) => (
@@ -98,7 +98,7 @@ const NavBar: React.FC = () => {
               <NavLink
                 to={`${item.path}`}
                 className={({ isActive }) =>
-                  isActive ? "active-route navItem" : "no-underline font-semibold text-white pb-[3px] relative"
+                  isActive ? "active-route navItem" : "navItem"
                 }
               >
                 {item.label}

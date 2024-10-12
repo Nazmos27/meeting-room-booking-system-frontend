@@ -1,17 +1,33 @@
 import { createBrowserRouter } from "react-router-dom";
 
 import App from "../App";
-
 import DashboardLayout from "../components/layout/DashboardLayout";
-
 import ProtectedLayout from "../components/layout/ProtectedLayout";
+import ErrorPage from "../pages/ErrorPage";
+import Home from "../pages/HomePage/Home";
+import AllRooms from "../pages/RoomPage/AllRooms";
+import Booking from "../pages/UserPage/Booking";
+import Checkout from "../pages/UserPage/Checkout";
+import MyBookings from "../pages/UserPage/MyBookings";
+import RoomDetails from "../pages/RoomPage/RoomDetails";
+import AboutPage from "../pages/AboutPage";
+import ContactPage from "../pages/ContactPage";
+import WelcomePage from "../pages/AdminPage/WelcomePage";
+import RoomManagement from "../pages/AdminPage/RoomManagement";
+import CreateRoom from "../pages/AdminPage/CreateRoom";
+import UpdateRoom from "../pages/AdminPage/UpdateRoom";
+import SlotsManagement from "../pages/AdminPage/SlotsManagement";
+import BookingManagement from "../pages/AdminPage/BookingMangement";
+import UserManagement from "../pages/AdminPage/UserManagement";
+import Login from "../pages/LoginPage";
+import SignUp from "../pages/SignupPage";
 
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-    errorElement: <Error />,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "/",
@@ -19,7 +35,7 @@ const router = createBrowserRouter([
       },
       {
         path: "rooms",
-        element: <Rooms />,
+        element: <AllRooms />,
       },
       {
         path: "booking/:roomId",
@@ -56,16 +72,13 @@ const router = createBrowserRouter([
       },
       {
         path: "about-us",
-        element: <AboutUs />,
+        element: <AboutPage />,
       },
       {
         path: "contact-us",
-        element: <ContactUs />,
+        element: <ContactPage />,
       },
-      {
-        path: "contact-us",
-        element: <ContactUs />,
-      },
+      
     ],
   },
   {
@@ -76,13 +89,13 @@ const router = createBrowserRouter([
         <DashboardLayout />
       </ProtectedLayout>
     ),
-    errorElement: <Error />,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "/dashboard",
         element: (
           <ProtectedLayout role="admin">
-            <WelcomeAdmin />,
+            <WelcomePage />,
           </ProtectedLayout>
         ),
       },
