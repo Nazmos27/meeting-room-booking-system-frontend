@@ -26,7 +26,7 @@ const CreateRoom = () => {
       // Upload main image
       const mainImageFormData = new FormData();
       mainImageFormData.append("file", img);
-      mainImageFormData.append("upload_preset", "meetingspot");
+      mainImageFormData.append("upload_preset", "reserveIt");
 
       const mainImageResponse = await uploadImage(mainImageFormData);
       const mainImageUrl = mainImageResponse.secure_url;
@@ -36,7 +36,7 @@ const CreateRoom = () => {
         detailImages.map(async (imageFile: File) => {
           const formData = new FormData();
           formData.append("file", imageFile);
-          formData.append("upload_preset", "meetingspot");
+          formData.append("upload_preset", "reserveIt");
 
           const response = await uploadImage(formData);
           return response.secure_url;
@@ -88,7 +88,11 @@ const CreateRoom = () => {
           </Col>
 
           <Col sm={24} lg={12}>
-            <CInputField label="Price Per Slot" name="pricePerSlot" type="number" />
+            <CInputField
+              label="Price Per Slot"
+              name="pricePerSlot"
+              type="number"
+            />
           </Col>
           <Col sm={24} lg={12}>
             <CInputField
