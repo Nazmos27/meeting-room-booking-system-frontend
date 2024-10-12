@@ -1,6 +1,5 @@
 import React from "react";
 import {  Collapse } from "antd";
-import { motion } from "framer-motion";
 import SectionHeader from "../../components/ui/SectionHeader";
 import type { CollapseProps } from 'antd';
 import Lottie from "lottie-react";

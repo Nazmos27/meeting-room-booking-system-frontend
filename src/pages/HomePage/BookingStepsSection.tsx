@@ -1,24 +1,32 @@
 import React from "react";
 import { Row, Col } from "antd";
 import { motion } from "framer-motion";
-import { FaDoorOpen, FaCalendarAlt, FaCheckCircle } from "react-icons/fa";
 import SectionHeader from "../../components/ui/SectionHeader";
+import {
+  CheckCircleTwoTone,
+  DollarTwoTone,
+  LoadingOutlined,
+  SmileOutlined,
+  SolutionOutlined,
+  UserOutlined,
+} from "@ant-design/icons";
+import { Steps } from "antd";
 
 const steps = [
   {
     title: "Select a Room",
-    description: "Browse our wide range of rooms to find the perfect fit.",
-    icon: <FaDoorOpen size={50} color="#003366" />,
+    description: "Browse our rooms collection to find the perfect fit.",
+    icon: "./icons/selective.gif",
   },
   {
     title: "Choose Date & Time",
     description: "Pick the date and time that suits your schedule.",
-    icon: <FaCalendarAlt size={50} color="#003366" />,
+    icon: "./icons/calendar.gif",
   },
   {
     title: "Confirm Booking",
     description: "Finalize your booking and get instant confirmation.",
-    icon: <FaCheckCircle size={50} color="#003366" />,
+    icon: "./icons/heart.gif",
   },
 ];
 
@@ -46,25 +54,44 @@ const BookingStepsSection: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3 }}
             >
-              <div
-                style={{
-                  padding: "30px",
-                  borderRadius: "10px",
-                  backgroundColor: "#f5f5f5",
-                  textAlign: "center",
-                  boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
-                }}
-              >
-                <div style={{ marginBottom: "20px" }}>{step.icon}</div>
-                <h3 style={{ color: "#003366", fontSize: "20px" }}>
-                  {step.title}
-                </h3>
-                <p style={{ fontSize: "16px" }}>{step.description}</p>
+              <div className="border-2 px-5 hover:scale-110 transition-all duration-300 hover:bg-blue-100 py-3 rounded text-center flex flex-col items-center">
+                <img
+                  src={step.icon}
+                  className="h-20 w-20 rounded-full"
+                  alt="service icons"
+                />
+                <h3 className=" my-2">{step.title}</h3>
+                <p>{step.description}</p>
               </div>
             </motion.div>
           </Col>
         ))}
       </Row>
+      <Steps
+        className="mt-6"
+        items={[
+          {
+            title: "Login",
+            status: "finish",
+            icon: <UserOutlined />,
+          },
+          {
+            title: "Verification",
+            status: "finish",
+            icon: <CheckCircleTwoTone />
+          },
+          {
+            title: "Pay",
+            status: "finish",
+            icon: <DollarTwoTone />
+          },
+          {
+            title: "Done",
+            status: "finish",
+            icon: <SmileOutlined />,
+          },
+        ]}
+      />
     </div>
   );
 };

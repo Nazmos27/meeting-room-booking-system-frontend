@@ -10,46 +10,39 @@ import SectionHeader from "../../components/ui/SectionHeader";
 
 const testimonials = [
   {
-    name: "John Doe",
-    role: "CEO, Tech Corp",
+    name: "Benedict Cumberbatch",
+    role: "Detective",
     testimonial:
       "This booking system is incredible! The process is smooth and straightforward. I was able to book a meeting room in just a few clicks.",
     image:
-      "https://res.cloudinary.com/dbwftcxvx/image/upload/v1726165578/user2_eqy93v.jpg",
+      "https://cdn.britannica.com/96/173696-050-7070A29D/Benedict-Cumberbatch-British-stage-screen.jpg",
   },
   {
-    name: "Jane Smith",
-    role: "CTO, Innovation Labs",
+    name: "Elezabeth Olsen",
+    role: "Actress",
     testimonial:
       "Absolutely love the user experience. The real-time availability feature is a game-changer. It’s so easy to find the perfect room.",
     image:
-      "https://res.cloudinary.com/dbwftcxvx/image/upload/v1726165578/user8_kjaewb.jpg",
+      "https://cdn.britannica.com/47/217047-050-4EBEFEBA/American-actress-Elizabeth-Olsen-2009.jpg",
   },
   {
-    name: "Michael Johnson",
-    role: "Project Manager, BuildX",
+    name: "Pattrick Bateman",
+    role: "Actor",
     testimonial:
       "Efficient, intuitive, and reliable. The support team is also very responsive. Highly recommend this service!",
     image:
-      "https://res.cloudinary.com/dbwftcxvx/image/upload/v1726165578/user10_s6hknx.jpg",
+      "https://i.scdn.co/image/ab67616d00001e0202e86742376be76f5ba43a7a",
   },
   {
-    name: "Emily Davis",
-    role: "Entrepreneur, Startup Hub",
+    name: "Levi Ackerman",
+    role: "Squad Captain, Scout Regiment",
     testimonial:
       "Secure transactions and seamless booking. I can book rooms quickly and focus on my meetings. Great service!",
     image:
-      "https://res.cloudinary.com/dbwftcxvx/image/upload/v1726165578/user1_apcq2e.jpg",
+      "https://i.pinimg.com/236x/46/01/67/46016776db919656210c75223957ee39.jpg",
   },
 
-  {
-    name: "Emily Davis",
-    role: "Entrepreneur, Startup Hub",
-    testimonial:
-      "Secure transactions and seamless booking. I can book rooms quickly and focus on my meetings. Great service!",
-    image:
-      "https://res.cloudinary.com/dbwftcxvx/image/upload/v1726165577/user4_ojhwa5.jpg",
-  },
+  
 ];
 
 const TestimonialSection: React.FC = () => {
