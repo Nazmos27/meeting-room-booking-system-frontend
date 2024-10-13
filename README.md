@@ -1,51 +1,90 @@
-# React + TypeScript + Vite
+# ReserveIt - Meeting Room Booking System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to **ReserveIt**, a comprehensive and dynamic meeting room booking platform, designed for both users and administrators. The platform offers seamless booking functionalities, room management, and payment integration, making it easier than ever to manage meeting spaces.
 
-Currently, two official plugins are available:
+## 🚀 Live Demo
+Visit the live website form [here](https://reserve-it-ten.vercel.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📂 Project Overview
 
-## Expanding the ESLint configuration
+### Backend Tech Stack:
+- **Node.js**
+- **Express.js**
+- **Mongoose** (MongoDB for database)
+- **TypeScript**
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Frontend Tech Stack:
+- **React.js**
+- **TypeScript**
+- **Ant Design**
+- **Redux Toolkit & RTK Query**
+- **Zod Validation**
 
-- Configure the top-level `parserOptions` property like this:
+### Payment Integration:
+- **Amar Pay**: Secure and smooth payment processing.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## ✨ Features
+### User Features:
+- **Real-Time Room Availability**: Users can browse rooms and check availability in real-time.
+- **Room Booking**: Book rooms for meetings with just a few clicks.
+- **Dynamic User Dashboard**: Track and manage your bookings effortlessly.
+  
+### Admin Features:
+- **Admin Dashboard**: Comprehensive admin panel for managing rooms, slots, and bookings.
+- **CRUD Operations**: Create, update, delete rooms, slots, and bookings dynamically.
+- **Payment Management**: Monitor and manage transactions through Amar Pay.
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+### Payment System:
+- Integrated **Amar Pay** payment gateway ensures smooth and secure transactions.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## 📦 Installation & Setup
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
-"# meeting-room-booking-system-frontend" 
+### Frontend Setup:
+1. Clone the backend repository:
+   ```bash
+   git clone https://github.com/Nazmos27/meeting-room-booking-system-frontend
+
+2. Install all dependencies
+   ```bash
+    npm install
+3. Set up a .env file as per .env.example file. Add you database and all necessary link there
+4. Then run it on local machine
+   ```bash
+    npm run dev
+
+### Backend Setup 
+
+See [here](https://github.com/Nazmos27/meeting-room-booking-system-backend) to setup the backend on your local machine
+
+## 🛠️ Usage
+
+### User Dashboard:
+- Browse rooms based on availability.
+- Make and manage bookings.
+
+### Admin Dashboard:
+- Manage user, room, slots, availability, and booking requests.
+- Oversee payment transactions.
+
+## 📚 Documentation
+
+For further details on API routes, services, and components, refer to the following documentation:
+
+### Backend Repository:
+[Backend Codebase](https://github.com/Nazmos27/meeting-room-booking-system-backend)  
+
+
+
+## 💡 Key Learnings
+- Implemented **TypeScript** in both backend and frontend for better type safety and developer experience.
+- Used **RTK Query** for optimized data fetching and state management.
+- Integrated **Zod Validation** for robust input validation and error handling.
+- Enhanced user experience with **Ant Design** components.
+- Successfully incorporated **Amar Pay** for real-time payments.
+
+## 🔗 Contact
+
+If you have any questions or want to collaborate, feel free to reach out:
+
+- **Email**: [Email](mailto:nazmos789@gamail.com)
+- **LinkedIn**: https://www.linkedin.com/in/nsakib27/
