@@ -8,6 +8,7 @@ import { FaUserShield } from "react-icons/fa";
 import { FaUsersGear } from "react-icons/fa6";
 import NavBar from "../ui/NavBar";
 import FooterSection from "../ui/Footer";
+import { Helmet } from "react-helmet-async";
 type MenuItem = Required<MenuProps>["items"][number];
 
 const { Content, Sider } = Layout;
@@ -47,7 +48,10 @@ const DashboardLayout: React.FC = () => {
   ];
 
   return (
-    <Layout>
+    <Layout >
+      <Helmet>
+        <title>Reserve It | Dashboard</title>
+      </Helmet>
       <div>
         <NavBar />
       </div>
@@ -57,7 +61,7 @@ const DashboardLayout: React.FC = () => {
             breakpoint="lg"
             style={{
               position: "fixed",
-              top: "60px",
+              top: "80px",
               left: 0,
             }}
             width={200}

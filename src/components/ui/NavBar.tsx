@@ -93,7 +93,7 @@ const NavBar: React.FC = () => {
           <Link to={"/"}>
             <img
               className="h-20 w-40 object-cover"
-              src="./logo.png"
+              src="./reserve_it.png"
               alt="logo"
             />
           </Link>

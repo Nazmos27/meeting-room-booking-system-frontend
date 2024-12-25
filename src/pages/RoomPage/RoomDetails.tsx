@@ -41,7 +41,7 @@ const RoomDetails: React.FC = () => {
                 alt="Room Image"
               />
             </div>
-            <div style={{ display: "flex", gap: "10px" }}>
+            <div style={{ display: "flex", gap: "10px"  }}>
               {detailImages?.map((image: string, index: number) => (
                 <div
                   key={index}

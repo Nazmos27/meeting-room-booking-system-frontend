@@ -6,11 +6,15 @@ import FeaturedSection from "./FeaturedSection";
 import WhyUsSection from "./WhyUsSection";
 import BookingStepsSection from "./BookingStepsSection";
 import TestimonialSection from "./TestimonialSection";
+import { Helmet } from "react-helmet-async";
 
 
 const Home: React.FC = () => {
   return (
     <div>
+      <Helmet>
+        <title>Reserve It | Home</title>
+      </Helmet>
       <BannerSection />
       <CustomContainer>
         <ServiceSection />

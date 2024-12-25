@@ -25,7 +25,8 @@ const Login: React.FC = () => {
       const res = await login(data as { email: string; password: string });
 
       if (res.error) {
-        toast.error("Something went wrong", { id: toastId });
+        console.log(res.error?.data?.message);
+        toast.error(`Something went wrong - ${res.error?.data?.message}`, { id: toastId });
       } else if (res.data.token) {
         const user = verifyToken(res.data.token) as TUser;
         dispatch(setUser({ user: res?.data?.data, token: res.data.token }));
@@ -38,6 +39,7 @@ const Login: React.FC = () => {
         }
       }
     } catch (error) {
+      console.log(error);
       toast.error("Something went wrong", { id: toastId });
     }
   };
@@ -70,7 +72,7 @@ const Login: React.FC = () => {
           </CForm>
         </div>
         <Divider>
-          New user? please <Link to={"/signup"}>Signup</Link>
+          New user? please <Link to={"/signup"} className="text-teal-600">Signup</Link>
         </Divider>
       </div>
     </div>

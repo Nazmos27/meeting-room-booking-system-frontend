@@ -1,9 +1,10 @@
 export const customTheme = {
     components: {
       Button: {
-        defaultBorderColor: "#957C3D", // Custom border for default buttons
-        defaultColor: "#fff", // Custom text color for default buttons
-        defaultBg: "#002349", // Custom background color for default buttons
+        // defaultBorderColor: "#957C3D", // Custom border for default buttons
+        defaultColor: "#000000", // Custom text color for default buttons
+        defaultBg: "#fff", // Custom background color for default buttons
+        defaultHoverColor: "#000000", // Custom text color for default buttons on hover
       },
     },
   };

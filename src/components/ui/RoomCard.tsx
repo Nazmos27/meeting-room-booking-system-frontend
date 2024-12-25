@@ -13,14 +13,10 @@ const RoomCard: React.FC<TRoomCardProps> = ({ room }) => {
       <img
         src={room.img}
         alt="Room Photo"
-        style={{
-          width: "100%",
-          borderTopRightRadius: "8px",
-          borderTopLeftRadius: "8px",
-        }}
+        className="w-full h-[400px] border-t rounded-md object-cover"
       />
       <div className="cardInfo">
-        <h1 className="md:text-2xl text-sm">{room.name}</h1>
+        <h1 className="md:text-2xl text-xl">{room.name}</h1>
         <h3 >Capacity: {room.capacity} Person</h3>
         <h3 style={{ marginBottom: "10px" }}>
           Price per Slot:{" "}

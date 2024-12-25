@@ -5,7 +5,7 @@ import "../../styles/style.css";
 import SectionHeader from "../../components/ui/SectionHeader";
 
 const ServiceSection: React.FC = () => {
-  const services = [
+  const services = [  
     {
       icon: "./icons/easy-peasy.gif",
       description:

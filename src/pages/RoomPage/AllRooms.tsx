@@ -7,6 +7,7 @@ import { TbFilterEdit } from "react-icons/tb";
 import { FieldValues, SubmitHandler } from "react-hook-form";
 import { TRoom } from "../../types/user.types";
 import FilterSlider from "./FilterSlider";
+import { Helmet } from "react-helmet-async";
 
 const AllRooms: React.FC = () => {
   const [openDrawer, setOpenDrawer] = useState(false);
@@ -106,6 +107,9 @@ const AllRooms: React.FC = () => {
   }
   return (
     <div style={{ margin: "70px 0px", minHeight: "100vh" }}>
+      <Helmet>
+        <title>Reserve It | Room</title>
+      </Helmet>
       {/* Drawer */}
       <FilterSlider
         onClose={onClose}

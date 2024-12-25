@@ -1,105 +1,57 @@
-import React from "react";
-// Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
-
-import "./banner.css";
-
-// import required modules
-import { Autoplay } from "swiper/modules";
 import { Button } from "antd";
 import { Link } from "react-router-dom";
-import { primaryButton } from "../../config/themeConfig";
-const BannerSection: React.FC = () => {
+import CustomContainer from "../../components/CustomContainer";
+
+const BannerSection = () => {
   return (
-    <div style={{ position: "relative", width: "100%" }}>
-      <Swiper
-        spaceBetween={30}
-        speed={1600}
-        loop={true}
-        centeredSlides={true}
-        autoplay={{
-          delay: 2500,
-          disableOnInteraction: false,
-        }}
-        modules={[Autoplay]}
-        className="mySwiper"
-      >
-        <SwiperSlide>
-          <img
-            src="https://i.ibb.co.com/4WZ3BYN/Smart-office-and-coworking-place-Krasnodar-1.jpg"
-            alt="slider Img"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src="https://i.ibb.co.com/mT2t0Kc/ec0dc51a-ae78-44b4-975c-972a51f4cf73.jpg"
-            alt="slider Img"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src="https://i.ibb.co.com/B37SP2P/9eafc898-73c5-449e-9184-8997ec94f32a.jpg"
-            alt="slider Img"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src="https://i.ibb.co.com/B6zZxkb/Orange-Poland-Offices-Warsaw-Office-Snapshots.jpg"
-            alt="slider Img"
-          />
-        </SwiperSlide>
-      </Swiper>
-      <div
-        style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          width: "100%",
-          height: "100%",
-          background: "#102d2e8c",
-          zIndex: 10,
-          color: "white",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        <div
-          style={{
-            width: "95%",
-            margin: "auto",
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "center",
-            gap : "14px"
-          }}
-        >
-          <h1 className="text-5xl text-center">
-            Book Your Ideal Meeting Room with Ease.
-          </h1>
-          <h3 className="text-3xl text-center">
-            Efficient, hassle-free room booking for all your meeting needs
-          </h3>
-          <Link style={{ marginTop: "10px" }} to={"/rooms"}>
-            <Button type="primary" style={primaryButton} className="h-14 w-32 md:text-xl hover:scale-110 ">
-              Book Now
-            </Button>
-          </Link>
+    <div>
+      <CustomContainer>
+        <div className="flex items-center justify-center mt-28 gap-10">
+          <div className="w-1/2">
+            <h1 className="text-5xl pl-16">Your Perfect </h1>
+            <br />
+            <p className="border-black border-2 rounded-full text-center text-5xl px-4 py-4">
+              Meeting Space
+            </p>
+            <br />{" "}
+            <p className="text-4xl pl-16">
+              Just a{" "}
+              <Link to="/rooms">
+                <button className="bg-green-300 hover:bg-green-500 py-2 px-4 rounded-full">
+                  Click
+                </button>
+              </Link>{" "}
+              away
+            </p>
+            <hr className="mt-6 border-2" />
+            <p>
+              Efficient, hassle-free room booking for all your meeting needs.
+              Just Select, Pay and Enjoy
+            </p>
+            <div className="">
+            <div className="gallery">
+	<img src="https://picsum.photos/id/1028/800/600" alt="a forest after an apocalypse"/>
+	<img src="https://picsum.photos/id/15/800/600" alt="a waterfall and many rocks"/>
+	<img src="https://picsum.photos/id/1040/800/600" alt="a house on a mountain"/>
+	<img src="https://picsum.photos/id/106/800/600" alt="sime pink flowers"/>
+	{/* <img src="https://picsum.photos/id/136/800/600" alt="big rocks with some trees"/> */}
+</div>
+            </div>
+          </div>
+          <div className="">
+            <img
+              src="https://i.ibb.co.com/mT2t0Kc/ec0dc51a-ae78-44b4-975c-972a51f4cf73.jpg"
+              alt="bannerImg"
+              className="rounded-3xl"
+            />
+          </div>
         </div>
-      </div>
+      </CustomContainer>
     </div>
   );
 };
 
 export default BannerSection;
-
 
 // https://i.ibb.co.com/B37SP2P/9eafc898-73c5-449e-9184-8997ec94f32a.jpg
 // https://i.ibb.co.com/mT2t0Kc/ec0dc51a-ae78-44b4-975c-972a51f4cf73.jpg
@@ -108,3 +60,4 @@ export default BannerSection;
 // https://i.ibb.co.com/4WZ3BYN/Smart-office-and-coworking-place-Krasnodar-1.jpg
 // https://i.ibb.co.com/B6zZxkb/Orange-Poland-Offices-Warsaw-Office-Snapshots.jpg
 // https://i.ibb.co.com/Fg52m0F/Smart-office-and-coworking-place-Krasnodar.jpg
+

@@ -16,7 +16,8 @@ const WelcomePage: React.FC = () => {
           paddingLeft: "1.25rem",
           paddingRight: "1.25rem",
           margin: "2rem auto",
-          maxWidth: "100%",
+          maxWidth: "40%",
+          maxHeight: "40%"
         }}
       >
         <Lottie animationData={welcomeAnimation} loop={true} />

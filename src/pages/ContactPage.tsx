@@ -12,7 +12,7 @@ const ContactPage: React.FC = () => {
   return (
     <div className="my-20">
       <Helmet>
-        <title>Mecha Freak | Contact</title>
+        <title>Reserve It | Contact</title>
       </Helmet>
       <CustomContainer>
         <SectionHeader title="Contact Us" subTitle="" />
@@ -21,7 +21,7 @@ const ContactPage: React.FC = () => {
           <div>
             <div className="flex items-center gap-2">
               <MdEmail className="text-2xl text-blue-800" />
-              <h2 className="text-xl font-semibold">sample@mecha-freak.com</h2>
+              <h2 className="text-xl font-semibold">sample@reserve-it.com</h2>
             </div>
 
             <div className="flex items-end">

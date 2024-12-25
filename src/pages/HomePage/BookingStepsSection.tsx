@@ -5,9 +5,7 @@ import SectionHeader from "../../components/ui/SectionHeader";
 import {
   CheckCircleTwoTone,
   DollarTwoTone,
-  LoadingOutlined,
   SmileOutlined,
-  SolutionOutlined,
   UserOutlined,
 } from "@ant-design/icons";
 import { Steps } from "antd";
@@ -68,7 +66,7 @@ const BookingStepsSection: React.FC = () => {
         ))}
       </Row>
       <Steps
-        className="mt-6"
+        className="mt-6 hidden"
         items={[
           {
             title: "Login",

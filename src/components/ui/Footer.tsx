@@ -1,14 +1,14 @@
-import React, { useState } from "react";
+import  { FormEvent, useState } from "react";
 import { Row, Col, Typography, List, Input, Button, Space } from "antd";
 import { FacebookFilled, LinkedinFilled, TwitterSquareFilled, GithubOutlined } from "@ant-design/icons";
 import { SiVisa, SiMastercard, SiPaypal, SiAmericanexpress } from "react-icons/si";
 
-const { Title, Text, Link } = Typography;
+const {  Text, Link } = Typography;
 
 const Footer = () => {
   const [email, setEmail] = useState("");
 
-  const handleSubscribe = (e) => {
+  const handleSubscribe = (e : FormEvent) => {
     e.preventDefault();
     console.log("Subscribed with email:", email);
     setEmail("");

@@ -6,6 +6,7 @@ import { useGetMyBookingsQuery } from "../../redux/features/user/userAccess.api"
 import { TBooking, TSlot } from "../../types/user.types";
 import { Link } from "react-router-dom";
 import SectionHeader from "../../components/ui/SectionHeader";
+import { Helmet } from "react-helmet-async";
 
 const MyBookings: React.FC = () => {
   const { data: bookings, isLoading } = useGetMyBookingsQuery(undefined);
@@ -80,6 +81,9 @@ const MyBookings: React.FC = () => {
           alignItems: "center",
         }}
       >
+        <Helmet>
+        <title>Reserve It | Contact</title>
+      </Helmet>
         <CustomContainer>
           <div style={{ textAlign: "center" }}>
             <Spin size="large" />

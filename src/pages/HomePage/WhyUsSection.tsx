@@ -59,9 +59,9 @@ const WhyUsSection: React.FC = () => {
   return (
     <div style={{ margin: "100px 0px" }}>
       <SectionHeader title="Why Choose Us"/>
-      <div className="md: flex md:justify-center md:items-center">
-        <div className="w-1/2"><Lottie animationData={whyUs}></Lottie></div>
-        <Collapse accordion items={items} className="w-1/2 text-[#002349] md:text-xl"/>
+      <div className="flex md:flex-row flex-col justify-center items-center">
+        <div className="md:w-1/2 w-full"><Lottie animationData={whyUs}></Lottie></div>
+        <Collapse accordion items={items} className="md:w-1/2 w-full text-[#002349] md:text-xl"/>
       </div>
     </div>
   );
