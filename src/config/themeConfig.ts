@@ -10,9 +10,9 @@ export const customTheme = {
   };
   
   export const primaryButton = {
-    background: "#002349",
+    background: "#DAFFA9",
     border: "2px solid #957C3D",
-    color: "#fff",
+    color: "#000000",
     boxShadow: "0px 5px 15px rgba(0, 0, 0, 0.2)",
     cursor: "pointer"
   };

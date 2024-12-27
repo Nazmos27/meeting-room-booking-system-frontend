@@ -47,7 +47,7 @@ const testimonials = [
 
 const TestimonialSection: React.FC = () => {
   return (
-    <div style={{ margin: "100px 0px" }}>
+    <div id="reviews" style={{ margin: "100px 0px" }}>
       <SectionHeader
         title="Client Testimonials"
         subTitle="Experience from our valuable clents"

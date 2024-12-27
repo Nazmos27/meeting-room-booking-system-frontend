@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FieldValues, SubmitHandler } from "react-hook-form";
 import { Button, Col, Divider, Row } from "antd";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -12,6 +12,7 @@ import { signupSchema } from "../schemas/userValidationSchema";
 
 const SignUp: React.FC = () => {
   const [signUp] = useSignUpMutation();
+  const navigate = useNavigate()
 
   const onSubmit: SubmitHandler<FieldValues> = async (data) => {
     const toastId = toast.loading("Loading...");
@@ -23,6 +24,7 @@ const SignUp: React.FC = () => {
         toast.error("Something went wrong", { id: toastId });
       } else {
         toast.success("User created successfully", { id: toastId });
+        navigate('/login')
       }
     } catch (error) {
       console.log(error);

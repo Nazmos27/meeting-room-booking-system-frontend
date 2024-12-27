@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FieldValues, SubmitHandler } from "react-hook-form";
 import { Button, Col, Divider, Row } from "antd";
@@ -13,10 +13,24 @@ import { verifyToken } from "../utils/verifyToken";
 import CForm from "../components/form/CForm";
 import CInputField from "../components/form/CInputField";
 import { loginSchema } from "../schemas/userValidationSchema";
+
 const Login: React.FC = () => {
   const [login] = useLoginMutation();
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
+  const [defaultValues, setDefaultValues] = useState({
+    email: "",
+    password: "",
+  });
+  const adminCredential = {
+    email: "adminreserveIt@example.com",
+    password: "adminpass123@",
+  };
+  const userCredential = {
+    email: "user.reserveIt@example.com",
+    password: "userpass123@",
+  };
+  
 
   const onSubmit: SubmitHandler<FieldValues> = async (data) => {
     const toastId = toast.loading("Loading...");
@@ -55,15 +69,22 @@ const Login: React.FC = () => {
     >
       <div className="login-content">
         <h1 style={{ textAlign: "center" }}>Login</h1>
+        <Divider style={{border : 2}}>or</Divider>
+        <p className="text-center">Try with user-role based credentials for testing</p>
+        <div className="space-x-4 text-center my-6">
+        <button className=" bg-gray-200 hover:bg-gray-300 px-3 py-2 rounded-full" onClick={()=>setDefaultValues(userCredential)}>User Credentials</button>
+        <button className=" bg-gray-200 hover:bg-gray-300 px-3 py-2 rounded-full" onClick={()=>setDefaultValues(adminCredential)}>Admin Credentials</button>
+        </div>
+
 
         <div>
-          <CForm onSubmit={onSubmit} resolver={zodResolver(loginSchema)}>
+          <CForm onSubmit={onSubmit} resolver={zodResolver(loginSchema)} defaultValues={defaultValues}>
             <Row>
               <Col span={24}>
                 <CInputField type="email" label="Email" name="email" />
               </Col>
               <Col span={24}>
-                <CInputField type="text" label="Password" name="password" />
+                <CInputField type="text" label="Password" name="password"/>
               </Col>
             </Row>
             <Button htmlType="submit" type="primary" style={primaryButton}>

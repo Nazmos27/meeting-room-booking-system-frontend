@@ -120,7 +120,7 @@ const NavBar: React.FC = () => {
           {loggedInUser?.role ? (
             <div>
               <Dropdown menu={{ items }} trigger={["click"]}>
-                <FaUserCircle style={{ fontSize: "30px", color: "#fff" }} />
+                <FaUserCircle style={{ fontSize: "30px", color: "#000000" }} />
               </Dropdown>
             </div>
           ) : (
