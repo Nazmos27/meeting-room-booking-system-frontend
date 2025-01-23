@@ -16,25 +16,25 @@ const BannerSection = () => {
   return (
     <div>
       <CustomContainer>
-        <div className="flex items-center justify-center mt-36 gap-10">
-          <div className="w-1/2">
-            <h1 className="text-4xl pl-6 text-center">Reserve Your Perfect </h1>
+        <div className="flex flex-col-reverse md:flex-row items-center justify-center mt-36 gap-10">
+          <div className="md:w-1/2 w-full">
+            <h1 className="md:text-4xl text-2xl md:pl-6 text-center">Reserve Your Perfect </h1>
             <br />
-            <p className="border-black border-2 rounded-full text-center text-4xl  py-2 mx-16">
+            <p className="border-black border-2 rounded-full text-center md:text-4xl text-2xl  md:py-2 md:mx-16">
               Meeting Space
             </p>
             <br />{" "}
-            <p className="text-3xl text-center">
+            <p className="md:text-3xl text-2xl text-center">
               Just a{" "}
               <Link to="/rooms">
-                <button className="bg-green-300 hover:bg-green-500 py-2 px-4 rounded-full">
+                <button className="bg-green-300 hover:bg-green-500 md:py-2 md:px-4 py-1 px-3 text-xl md:text-3xl rounded-full">
                   Click
                 </button>
               </Link>{" "}
               away
             </p>
             <hr className="mt-6 border-2" />
-            <p className="my-3">
+            <p className="my-3 text-sm md:text-lg text-center">
               Efficient, hassle-free room booking for all your meeting needs.
               Just Select, Pay and Enjoy
             </p>
@@ -61,7 +61,7 @@ const BannerSection = () => {
               </div>
             </div>
           </div>
-          <div className="space-y-3 flex flex-col justify-start items-start">
+          <div className="space-y-3 flex flex-col md:justify-start md:items-start justify-center items-center">
             <img
               src="https://i.ibb.co.com/mT2t0Kc/ec0dc51a-ae78-44b4-975c-972a51f4cf73.jpg"
               alt="bannerImg"
@@ -69,7 +69,7 @@ const BannerSection = () => {
             />
             <div className="flex justify-center items-center gap-4">
               <Avatar.Group
-              size={{ xs: 20, sm: 26, md: 30, lg: 36, xl: 44, xxl: 100 }}
+              size={{ xs: 36, sm: 26, md: 30, lg: 36, xl: 44, xxl: 100 }}
               >
                 <Tooltip title="Levi Ackerman" placement="top">
                 <Avatar src="https://i.pinimg.com/736x/41/21/53/412153ead9ced3dd624d98f4297ec011.jpg" />
@@ -90,13 +90,15 @@ const BannerSection = () => {
                 
                 <Avatar style={{ backgroundColor: "#f56a00" ,fontSize : 15}}>1k+</Avatar>
               </Avatar.Group>
-              <p>Trusted by 1000+ happy customers!</p>
+              <p className="text-sm md:text-xl">Trusted by 1000+ happy customers!</p>
             </div>
-            <div className="flex justify-center items-center gap-3">
+            <div className="md:flex md:justify-center md:items-center md:gap-3">
+              <div className="flex justify-center items-center gap-2">
               <p className="border-black border-2 px-2 py-1 rounded-full">4.5 <StarFilled/></p>
               <a href='#reviews'><button className="border-black border-2 px-4 py-1 rounded-full">Client Reviews <ArrowRightOutlined/></button></a>
-              <div className="flex justify-center items-center">
-              <input type="text" className="w-64 h-9 border-black border-2 rounded-full pl-4" placeholder="Search here" />
+              </div>
+              <div className="flex justify-center md:mt-0 mt-3 items-center">
+              <input type="text" className="md:w-64 w-60 h-9 border-black border-2 rounded-full pl-4" placeholder="Search here" />
               <FaMagnifyingGlass className="relative right-8"/>
               </div>
               

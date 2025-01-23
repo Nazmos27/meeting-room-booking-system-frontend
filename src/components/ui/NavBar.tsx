@@ -88,7 +88,7 @@ const NavBar: React.FC = () => {
             className="block md:hidden"
             onClick={() => setIsOpenMenu(!isOpenMenu)}
           >
-            <HiMenuAlt1 style={{ fontSize: "20px" }} />
+            <HiMenuAlt1 style={{ fontSize: "20px", color:"black" }} />
           </Button>
           <Link to={"/"}>
             <img
